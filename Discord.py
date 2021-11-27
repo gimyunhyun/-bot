@@ -2,7 +2,8 @@ import discord
 import os
 from discord.ext import commands
 bot = commands.Bot(command_prefix='$')
-TOKEN = 'ODg5NjkyODIyMTY3NTE1MTc2.YUk9Ag.b4E2SYEQpctkzpTWlbD8sMYC1jQ'
+access_token = os.environ['BOT_TOKEN']
+TOKEN = 'access_token'
 
 @bot.event
 async def on_ready():
@@ -144,4 +145,4 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
     	await ctx.send("명령어를 찾지 못했습니다.")
 
-bot.run(TOKEN)
+bot.run(access_token)
