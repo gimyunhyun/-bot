@@ -99,15 +99,6 @@ async def 운(ctx):
         await ctx.send(f'{ctx.message.author.mention}님은 오늘 하루가 찜찜하실껍니다.')
     if randomNum == 12:
         await ctx.send(f'{ctx.message.author.mention}모든일이 행운이고 행복하고 좋은일만 나타날 껍니다.')
-    from datetime import datetime
-
-    today = datetime.now().strftime('%Y-%m-%d')
-    
-    if rs is not None and str(rs.get('data')) == today:
-        await ctx.message.delete()
-        await ctx.channel.send(f'> {ctx.message.author.display_name}하루에 한번 사용가능합니다')
-        return
-
 
 @bot.command()
 async def 바보(ctx):
